@@ -2,7 +2,6 @@
 
 ## Course Information
 **Course Code:** CS2203 – Artificial Intelligence  
-**Project Title:** MKAI – Move Prediction using CNNs in Chess
 
 ## Team Members
 | Name | Roll Number |
