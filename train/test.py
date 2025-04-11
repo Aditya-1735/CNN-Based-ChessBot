@@ -5,8 +5,8 @@ import sys
 
 from util import fen_to_matrix, invert_fen
 
-model = tf.keras.models.load_model('combined/model11.h5')
-model = tf.keras.models.load_model('combined_to/model7.h5')
+model = tf.keras.models.load_model(r'C:\Users\Shresth\vscode2\pyfiles\chess-ai\gui\models\1100-elo\from.h5')
+model = tf.keras.models.load_model(r'C:\Users\Shresth\vscode2\pyfiles\chess-ai\gui\models\1100-elo\to.h5')
 
 # fen = 'rnbqkbnr/pppppppp/8/8/8/8/PPPPPPPP/RNBQKBNR w KQkq - 0 0' # 51 is d4
 # fen = 'rnb1kbnr/pppp1ppp/8/4p1q1/4P3/3P4/PPP2PPP/RNBQKBNR w KQkq - 1 3' # 58

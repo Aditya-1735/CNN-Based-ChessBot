@@ -21,6 +21,7 @@ pygame.display.set_caption('Chess')
 board = chess.Board()
 
 white = HumanPlayer(colour='white')
+black = HumanPlayer(colour='black')
 white_ai = AIPlayer(colour='white', from_model=from_model, to_model=to_model)
 black_ai = AIPlayer(colour='black', from_model=from_model, to_model=to_model)
 black = black_ai	
@@ -96,4 +97,4 @@ while run:
 		elif not white_move and not human_white and black.move(board=board, event=event, human_white=human_white):
 			white_move = not white_move
 	
-	
+		
