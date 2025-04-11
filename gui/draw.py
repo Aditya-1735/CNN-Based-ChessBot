@@ -46,7 +46,7 @@ FROM_COLOUR = (45,22,178)
 TO_COLOUR = (223, 223, 12)
 
 def draw_background(win):
-    win.fill((200,200,200))
+    win.fill((118, 150, 86))
 
     for x in range(8):
         for y in range(0, 8):
