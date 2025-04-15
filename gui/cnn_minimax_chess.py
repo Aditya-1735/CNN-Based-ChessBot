@@ -2,7 +2,7 @@ import numpy as np
 import chess
 import time
 import argparse
-from tensorflow.keras.models import load_model
+from tensorflow.keras.models import load_model # type: ignore
 import pygame
 import os
 
