@@ -563,8 +563,12 @@ class ChessGame:
         self.screen.blit(history_title, (self.board_size + 20, 250))
         
         # Display last 10 moves
-        for i, move in enumerate(self.move_history[-10:]):
-            move_num = len(self.move_history) - 10 + i + 1
+        print(self.move_history)
+        for i, move in enumerate(self.move_history[-10:], start=0):
+            if (len(self.move_history)>= 10):
+                move_num = len(self.move_history) - 10 + i + 1
+            else:
+                move_num = i + 1
             move_text = f"{move_num}. {move}"
             move_surface = self.small_font.render(move_text, True, self.BLACK)
             self.screen.blit(move_surface, (self.board_size + 20, 280 + i * 20))
