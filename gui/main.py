@@ -261,16 +261,20 @@ class ChessGame:
                     move = chess.Move.from_uci(move_uci)
                     if move in self.board.legal_moves:
                         # Check for promotion
-                        if self.board.piece_at(chess.parse_square(self.selected_square)).piece_type == chess.PAWN:
-                            from_rank = int(self.selected_square[1])
-                            to_rank = int(square_name[1])
-                            if (from_rank == 7 and to_rank == 8) or (from_rank == 2 and to_rank == 1):
-                                move.promotion = chess.QUEEN
+                        piece = self.board.piece_at(chess.parse_square(self.selected_square))
+                        if piece and piece.piece_type == chess.PAWN:
+                            # Check if moving to the last rank
+                            to_square = chess.parse_square(square_name)
+                            print(piece.color)
+                            print(chess.square_rank(to_square))
+                            if (piece.color and chess.square_rank(to_square) == 7) or (not piece.color and chess.square_rank(to_square) == 0):
+                                # Create a new move with promotion to queen
+                                move = chess.Move.from_uci(move_uci + "q")
                         
                         # Make the move
                         self.board.push(move)
-                        self.last_move = move_uci
-                        self.move_history.append(move_uci)
+                        self.last_move = move.uci()
+                        self.move_history.append(move.uci())
                         self.ai_thinking = True  # Now it's AI's turn
                     else:
                         # If move is not legal, try selecting a new piece
